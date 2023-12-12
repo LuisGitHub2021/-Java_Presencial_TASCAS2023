@@ -1,0 +1,1 @@
+db.clientes.find({_id:/^pr/},{"_id":0}).pretty()

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MongoDb" id="Project-67" database="MongoDb" >
+	<schema name="optica" >
+		<table name="clientes" virtual="y" >
+			<column name="_id" type="object" length="800" decimal="0" jt="4999544" mandatory="y" />
+			<column name="nombre" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cp" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="telefono" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="mail" type="string" length="800" decimal="0" jt="12" />
+			<column name="fechaCreacion" type="date" length="800" decimal="0" jt="91" />
+			<column name="recomendadoPor" type="object" length="800" decimal="0" jt="4999544" >
+				<column name="nombre" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="telefono" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+				<column name="mail" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			</column>
+			<column name="vendedor" type="object" length="800" decimal="0" jt="4999544" >
+				<column name="nombre" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="cp" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="telefono" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+				<column name="mail" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			</column>
+			<column name="gafas" type="array[object]" length="800" decimal="0" jt="4999545" >
+				<column name="proveedores_id" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="marca" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="modelo" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="tipoMontura" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="colorMontura" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="colorVidrio" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="od" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+				<column name="os" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+				<column name="precio" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+				<column name="fechaCreacion" type="date" length="800" decimal="0" jt="91" mandatory="y" />
+				<column name="aod" type="int" length="800" decimal="0" jt="4" />
+				<column name="aos" type="int" length="800" decimal="0" jt="4" />
+			</column>
+			<column name="nif" type="string" length="800" decimal="0" jt="12" />
+			<column name="calle" type="string" length="800" decimal="0" jt="12" />
+			<column name="numero" type="int" length="800" decimal="0" jt="4" />
+			<column name="piso" type="int" length="800" decimal="0" jt="4" />
+			<column name="puerta" type="int" length="800" decimal="0" jt="4" />
+			<column name="ciudad" type="string" length="800" decimal="0" jt="12" />
+			<column name="pais" type="string" length="800" decimal="0" jt="12" />
+			<column name="fax" type="int" length="800" decimal="0" jt="4" />
+			<column name="catalogo" type="array[object]" length="800" decimal="0" jt="4999545" >
+				<column name="marca" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="modelo" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+				<column name="precio" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+			</column>
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Main Layout" id="Layout-24aa" show_column_type="y" show_schema_name="y" show_page_borders="y" show_relation="name" >
+		<entity schema="optica" name="clientes" column="catalogo" color="BED3F4" x="512" y="688" />
+		<entity schema="optica" name="clientes" color="BED3F4" x="224" y="224" />
+		<entity schema="optica" name="clientes" column="gafas" color="BED3F4" x="336" y="688" />
+		<entity schema="optica" name="clientes" column="recomendadoPor" color="BED3F4" x="48" y="688" />
+		<entity schema="optica" name="clientes" column="vendedor" color="BED3F4" x="192" y="688" />
+		<callout x="224" y="80" pointer="Round" >
+			<comment><![CDATA[This is a layout. You can create multiple layouts with the same or different collections. 
+
+
+- Edit collections and validation rules by double-clicking the collection headers.]]></comment>
+		</callout>
+		<group name="Collection &#039;clientes&#039;" color="ECF0F7" >
+			<entity schema="optica" name="clientes" />
+			<entity schema="optica" name="clientes" column="recomendadoPor" />
+			<entity schema="optica" name="clientes" column="vendedor" />
+			<entity schema="optica" name="clientes" column="gafas" />
+			<entity schema="optica" name="clientes" column="catalogo" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-1e93" confirmed="y" show_column_type="y" show_schema_name="y" show_page_borders="y" show_relation="cascade" >
+		<comment><![CDATA[opticaMongoSchema]]></comment>
+		<entity schema="optica" name="clientes" column="catalogo" color="BED3F4" x="640" y="384" />
+		<entity schema="optica" name="clientes" color="BED3F4" x="416" y="80" />
+		<entity schema="optica" name="clientes" column="gafas" color="BED3F4" x="240" y="272" />
+		<entity schema="optica" name="clientes" column="recomendadoPor" color="BED3F4" x="640" y="208" />
+		<entity schema="optica" name="clientes" column="vendedor" color="BED3F4" x="48" y="208" />
+		<group name="clientes" color="ECF0F7" >
+			<entity schema="optica" name="clientes" column="recomendadoPor" />
+			<entity schema="optica" name="clientes" column="catalogo" />
+			<entity schema="optica" name="clientes" />
+			<entity schema="optica" name="clientes" column="vendedor" />
+			<entity schema="optica" name="clientes" column="gafas" />
+		</group>
+		<script name="Query Editor" id="Editor-c6a" language="SQL" >
+			<string><![CDATA[optica.clientes.find()
+
+//OR
+
+USE optica;
+db.clientes.find()
+
+//OR
+
+USE optica;
+db.getCollection('clientes').find()]]></string>
+		</script>
+		<browser id="Browse-10a1" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="optica" entity="clientes" x="-2147483648" y="-2147483648" width="-2147483648" height="-2147483648" record_view="y" />
+		</browser>
+	</layout>
+</project>

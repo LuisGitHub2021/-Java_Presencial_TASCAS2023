@@ -1,0 +1,1 @@
+db.clientes.find({_id:/^cl/}, {"nombre":1, "gafas":1, "_id":0}).pretty()

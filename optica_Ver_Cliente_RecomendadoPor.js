@@ -1,0 +1,1 @@
+db.clientes.find({_id:/^cl/, recomendadoPor: { $exists: true}}, {"nombre":1, "recomendadoPor":1, "_id":0}).pretty()
